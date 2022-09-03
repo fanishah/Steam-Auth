@@ -1,6 +1,4 @@
 <?php
-// Version v1.0
-// Version fanishah.ir
 if (empty($_SESSION['steam_uptodate']) or empty($_SESSION['steam_personaname'])) {
 	require 'SteamConfig.php';
 	$url = file_get_contents("https://api.steampowered.com/ISteamUser/GetPlayerSummaries/v0002/?key=".$steamauth['apikey']."&steamids=".$_SESSION['steamid']); 
@@ -39,8 +37,5 @@ $steamprofile['realname'] = $_SESSION['steam_realname'];
 $steamprofile['primaryclanid'] = $_SESSION['steam_primaryclanid'];
 $steamprofile['timecreated'] = $_SESSION['steam_timecreated'];
 $steamprofile['uptodate'] = $_SESSION['steam_uptodate'];
-
-// Version v1.0
-// Version fanishah.ir
 ?>
     
