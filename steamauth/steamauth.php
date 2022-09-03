@@ -1,17 +1,15 @@
 <?php
-// Version v1.0
-// Version fanishah.ir
 ob_start();
 session_start();
 
 function logoutbutton() {
-	echo "<form action='' method='get'><button name='logout' type='submit'>Logout</button></form>"; //logout button
+	echo "<form action='' method='get'><button name='logout' type='submit' class='bg-purple-600 py-1 px-5 rounded-lg'>Logout</button></form>"; //logout button
 }
 
 function loginbutton($buttonstyle = "square") {
 	$button['rectangle'] = "01";
 	$button['square'] = "02";
-	$button = "<a class='btn btn-dark' href='?login'>Login with Steam</a>";
+	$button = "<a href='?login' type='submit' class='w-full flex justify-center bg-purple-800  hover:bg-purple-700 text-gray-100 p-3  rounded-lg tracking-wide font-semibold  cursor-pointer transition ease-in duration-500'> Sign in with Steam </a>";
 	
 	echo $button;
 }
@@ -72,6 +70,4 @@ if (isset($_GET['update'])){
 	exit;
 }
 
-// Version v1.0
-// Version fanishah.ir
 ?>
