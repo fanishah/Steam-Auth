@@ -1,4 +1,4 @@
-# درباره
+## درباره
 می توانید از Steam Auth برای احراز هویت در وب سایت و دریافت  SteamID Hex و اطلاعات حساب استیم استفاده کنید.
 
 ##  نصب
@@ -8,7 +8,7 @@
 - مقدار  `$steamauth['loginpage']` در فایل `steamauth/SteamConfig.php` را با آدرس صفحه ورود تغییر دهید
 <br>
 <br>
-# About
+## About
 
 You can use Steam Auth to authenticate on the website and get SteamID Hex and Steam account information.
 
