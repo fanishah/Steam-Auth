@@ -1,140 +1,95 @@
 <?php
-// Version v1.0
+// Version v1.1
 // Version fanishah.ir
     require ('steamauth/steamauth.php');  
 ?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-	<!-- bootstrap css -->
-	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.rtl.min.css" integrity="sha384-+qdLaIRZfNu4cVPK/PxJJEy0B0f3Ugv8i482AKY7gwXwhaCroABd086ybrVKTa0q" crossorigin="anonymous">
-	<!-- bootstrap css -->
-	
-	<!-- bootstrap icons -->
-	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
-	<!-- bootstrap icons -->
-	<title>SteamID Finder</title>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="shortcut icon" href="./favicon.png" type="image/png">
+    <title>Authenticate Steam</title>
   </head>
-  <body class='bg-dark'>
-    <div>
-		<?php
+  <body class="bg-body">
+  <?php
 if(!isset($_SESSION['steamid'])) {
 	?>
-
-<div class='container-fluid vh-100 row justify-content-center align-items-center'>
-	<div class='row justify-content-center align-items-center'>
-		<div class='col-12 col-sm-9  col-lg-6 my-5'><div class='card '>
-			<div class='card-header p-3 pt-2  bg-secondary'>
-			<div class='text-end pt-1' >
-					<h5 class='text-sm mb-0 text-capitalize'>SteamID Finder</h5>
-				</div>
-			</div>
-			<hr class='dark horizontal my-0  bg-secondary'>
-			<div class='card-footer p-3  bg-secondary'>
-				<h5 class='mb-0 text-center'>
-					<h6 class="text-dark text-center mb-2">
-					You can use SteamID Finder to find out about SteamID Hex and SteamID Dec
-					</h6>
-					<?php loginbutton() ?>
-			    	</h5>
-					</div>
-			</div>
-		</div>
-	</div>
-	<footer class="footer">
-        <div class="container-fluid">
-          <div class="row align-items-center justify-content-lg-center">
-            <div class="col-9">
-              <div class="copyright text-start text-sm text-muted text-lg-center">
-                made with <i class="bi bi-suit-heart-fill"></i> by
-                <a href="https://fanishah.ir" class="font-weight-bold" target="_blank">fanishah</a>
-				-
-				<script>
-                  document.write(new Date().getFullYear())
-                </script>
+    <div
+      class="relative  mt-20 sm:mt-0 min-h-screen  sm:flex sm:flex-row  justify-center bg-transparent p-6 sm:pb-0 rounded-3xl shadow-xl">
+      <div class="flex-col flex  self-center lg:p-14 sm:max-w-4xl xl:max-w-md z-10">
+        <div class="self-start hidden lg:flex flex-col  text-gray-300">
+          <h1 class="font-semibold text-3xl">Authenticate Steam</h1>
+        </div>
+      </div>
+      <div class="flex justify-center self-center  z-10">
+        <div class="p-12 bg-gradient-to-b from-gray-900 via-gray-900 to-purple-800 mx-auto rounded-3xl w-96 ">
+          <div class="space-y-6">
+              <div>
+                <h1 class="text-3xl text-center">Sign in</h1>
+                <p class="text-justify">You can use Steam Auth to authenticate on the website and get SteamID Hex and Steam account information.
+                </p>
               </div>
+              <div>
+
+                <?php loginbutton() ?>
+              </div>
+            </div>
+            <div class="mt-7 text-center text-gray-400 text-xs">
+              <span>
+                    Copyright ©
+					<script>
+                 	 document.write(new Date().getFullYear())
+               		 </script>
+                    <a href="https://fanishah.ir" target="_blank" class="text-violet-500 hover:text-violet-600 ">fanishah</a></span>
             </div>
           </div>
         </div>
-      </footer>
-</div>
-
-	<?php
-	}  else {
-    include ('steamauth/userInfo.php');
-	?>
-		
-		<div class='container-fluid justify-content-center align-items-center'>
-	<div class='row d-flex justify-content-center align-items-center'>
-<div class="card mb-3 bg-secondary" style="max-width: 540px;">
-  <div class="row">
-    <div class="col-4 col-md-4 my-2">
-	<img src='<?=$steamprofile['avatarfull']?>class="img-fluid rounded-start" '>
-    </div>
-    <div class="col-8 col-md-8">
-      <div class="card-body">
-	 	 <p >
-		  Persona Name : <?=$steamprofile['personaname']?>
-		  </p>
-		  <p >
-		  SteamID : <?=$steamprofile['steamid']?>
-		  </p>
-		  <p>
-		  SteamID Hex : <?=dechex($steamprofile['steamid']);?>
-		  </p>
-		  <p>
-		  Persona State : <?php
-		  if($steamprofile['personastate']==0){
-			  echo "Offline";
-			}elseif($steamprofile['personastate']==1){
-				echo "Online";
-			}elseif($steamprofile['personastate']==2){
-				echo "Busy";
-			}elseif($steamprofile['personastate']==3){
-				echo "Away";
-			}elseif($steamprofile['personastate']==4){
-				echo "Snooze";
-			}elseif($steamprofile['personastate']==5){
-				echo "looking to trade";
-			}elseif($steamprofile['personastate']==6){
-				echo "looking to play";
-		  }
-		  logoutbutton();
-		 ?>
-		  </p>
-		  
       </div>
     </div>
-  </div>
-</div>
-	</div>
-	<footer class="footer">
-        <div class="container-fluid">
-          <div class="row align-items-center justify-content-lg-center">
-            <div class="col-9">
-              <div class="copyright text-start text-sm text-muted text-lg-center">
-                made with <i class="bi bi-suit-heart-fill"></i> by
-                <a href="https://fanishah.ir" class="font-weight-bold" target="_blank">fanishah</a>
-				-
-				<script>
-                  document.write(new Date().getFullYear())
-                </script>
-              </div>
-            </div>
+	<?php
+	} else {
+	include('steamauth/userInfo.php');
+	?>
+	    <section style="font-family: Montserrat" class=" bg-body flex font-medium items-center justify-center h-screen">
+      <div class="w-80 mx-auto  bg-gradient-to-b from-gray-900 to-purple-800 rounded-2xl px-8 py-6 shadow-lg">
+          <div class="mt-6 w-fit mx-auto">
+              <img src="<?=$steamprofile['avatarfull']?>" class="rounded-2xl w-28 " alt="profile picture">
           </div>
-        </div>
-      </footer>
-</div>
-		<?php
-		}    
-		?>
-	</div>
-	
-	<!--Version v1.0--> 
-	<!--Version fanishah.ir--> 
+  
+          <div class="my-3">
+              <h2 class="text-white font-bold text-2xl text-center tracking-wide"><?=$steamprofile['personaname']?></h2>
+          </div>
+          <div>
+            <div class="flex items-center"><p class="text-yellow-500 mr-1">SteamID</p><span><?=$steamprofile['steamid']?></span></div>
+            <div class="flex items-center"><p class="text-yellow-500 mr-1">SteamID Hex</p><span>steam:<?=dechex($steamprofile['steamid']);?></span></div>
+            <div class="flex items-center"><p class="text-yellow-500 mr-1">Persona State</p><span>
+            <?php
+              if($steamprofile['personastate']==0){
+                echo "Offline";
+              }elseif($steamprofile['personastate']==1){
+                echo "Online";
+              }elseif($steamprofile['personastate']==2){
+                echo "Busy";
+              }elseif($steamprofile['personastate']==3){
+                echo "Away";
+              }elseif($steamprofile['personastate']==4){
+                echo "Snooze";
+              }elseif($steamprofile['personastate']==5){
+                echo "looking to trade";
+              }elseif($steamprofile['personastate']==6){
+                echo "looking to play";
+              }
+            ?>
+            </span></div>
+          </div>
+          <div class="mt-3">
+           <?php logoutbutton() ?>
+          </div>
+      </div>
+  </section>
+	<?php } ?>
   </body>
 </html>
