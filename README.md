@@ -18,7 +18,7 @@ You can use Steam Auth to authenticate on the website and get SteamID Hex and St
 می توانید از Steam Auth برای احراز هویت در وب سایت و دریافت  SteamID Hex و اطلاعات حساب استیم استفاده کنید.
 
 ##  نصب
-- مقدار `$steamauth['apikey']` در فایل `steamauth/SteamConfig.php`  با کلید API خود تغییر دهید { http://steamcommunity.com/dev/apikey}
+- مقدار `$steamauth['apikey']` در فایل `steamauth/SteamConfig.php`  با کلید API خود تغییر دهید { http://steamcommunity.com/dev/apikey }
 - مقدار  `$steamauth['domainname']` در فایل `steamauth/SteamConfig.php` را با آدرس روت سایت تغییر دهید
 - مقدار  `$steamauth['logoutpage']` در فایل `steamauth/SteamConfig.php` را با آدرس صفحه خروج تغییر دهید
 - مقدار  `$steamauth['loginpage']` در فایل `steamauth/SteamConfig.php` را با آدرس صفحه ورود تغییر دهید
