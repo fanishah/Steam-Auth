@@ -9,10 +9,12 @@
 <br>
 مثال »
 ```sh
-$steamauth['apikey'] = "318a999f9dff40u2bcc024fcf30bde8b";
-$steamauth['domainname'] = "http://example.com";
-$steamauth['logoutpage'] = "http://example.com/logout";
-$steamauth['loginpage'] = "http://example.com/login";
+
+$steamauth['apikey'] = "318a999f9dff40u2bcc024fcf30bde8b"
+$steamauth['domainname'] = "http://example.com"
+$steamauth['logoutpage'] = "http://example.com/logout"
+$steamauth['loginpage'] = "http://example.com/login"
+
 ```
 <br>
 <br>
