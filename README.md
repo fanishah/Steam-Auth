@@ -9,12 +9,10 @@
 <br>
 مثال »
 ```sh
-
 $steamauth['apikey'] = "318a999f9dff40u2bcc024fcf30bde8b"
 $steamauth['domainname'] = "http://example.com"
 $steamauth['logoutpage'] = "http://example.com/logout"
 $steamauth['loginpage'] = "http://example.com/login"
-
 ```
 <br>
 <br>
@@ -31,14 +29,3 @@ You can use Steam Auth to authenticate on the website and get SteamID Hex and St
 - change `$steamauth['logoutpage']` to your address loguot in the `steamauth/SteamConfig.php`
 <br>
 - change `$steamauth['loginpage']` to your address login in the `steamauth/SteamConfig.php`
-<br>
-Example
-
-```sh
-
-$steamauth['apikey'] = "318a999f9dff40u2bcc024fcf30bde8b";
-$steamauth['domainname'] = "http://example.com";
-$steamauth['logoutpage'] = "http://example.com/logout";
-$steamauth['loginpage'] = "http://example.com/login";
-
-```
