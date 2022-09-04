@@ -8,8 +8,8 @@
 - مقدار  `$steamauth['loginpage']` در فایل `steamauth/SteamConfig.php` را با آدرس صفحه ورود تغییر دهید
 <br>
 <br>
-## About
 
+##  About
 You can use Steam Auth to authenticate on the website and get SteamID Hex and Steam account information.
 
 
