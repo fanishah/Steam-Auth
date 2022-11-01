@@ -11,6 +11,8 @@ You can use Steam Auth to authenticate on the website and get SteamID Hex and St
 - change `$steamauth['logoutpage']` to your address loguot in the `steamauth/SteamConfig.php`
 <br>
 - change `$steamauth['loginpage']` to your address login in the `steamauth/SteamConfig.php`
+
+
 <br>
 <br>
 
